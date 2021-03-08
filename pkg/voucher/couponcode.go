@@ -1,9 +1,10 @@
-package couponcode // import "github.com/captaincodeman/couponcode"
+package voucher
 
 import (
 	"fmt"
 	"regexp"
 	"strings"
+	//"github.com/lunarforge/random"
 )
 
 type (
@@ -43,7 +44,8 @@ func (g *generator) Generate() string {
 	parts := make([]string, g.parts)
 	i := 0
 	for i < g.parts {
-		code := randString(g.partLen - 1)
+		code := randStringCrypto(g.partLen - 1)
+		//code := random.SecureRandomAlphaString(g.partLen - 1)
 		check := checkCharacter(code, i+1)
 		parts[i] = code + check
 		if !hasBadWord(strings.Join(parts, "")) {

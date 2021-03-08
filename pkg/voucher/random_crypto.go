@@ -1,12 +1,12 @@
-// +build coupon-crypto
+// + build coupon-crypto
 
-package couponcode
+package voucher
 
 import (
 	"crypto/rand"
 )
 
-func randString(n int) string {
+func randStringCrypto(n int) string {
 	var bytes = make([]byte, n)
 	rand.Read(bytes)
 	for i, b := range bytes {

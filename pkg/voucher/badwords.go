@@ -1,4 +1,4 @@
-package couponcode
+package voucher
 
 import (
 	"strings"

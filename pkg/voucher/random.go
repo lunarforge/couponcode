@@ -1,6 +1,6 @@
-// +build !coupon-crypto
+// + build !coupon-crypto
 
-package couponcode
+package voucher
 
 import (
 	"math/rand"
