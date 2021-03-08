@@ -20,9 +20,9 @@ func main() {
 	}
 
 	rand.Seed(seedInt)
-	//cc := voucher.New(3, 5)
-	code := voucher.Generate()
-	validated, err := voucher.Validate(code)
+	cc := voucher.New(3, 5)
+	code := cc.Generate()
+	validated, err := cc.Validate(code)
 	if err != nil {
 		log.Fatalf("%v %v %v\n", code, validated, err)
 	}
